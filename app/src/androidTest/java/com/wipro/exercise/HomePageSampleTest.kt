@@ -1,36 +1,9 @@
 package com.wipro.exercise
 
-import android.R
-import android.content.Context
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import androidx.test.core.app.ActivityScenario
-import androidx.test.core.app.ApplicationProvider.getApplicationContext
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.contrib.RecyclerViewActions
-import androidx.test.espresso.matcher.ViewMatchers.*
-import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import com.wipro.exercise.ui.MainActivity
-import org.junit.Rule
-import org.junit.Test
-
-import org.hamcrest.Description
-import org.hamcrest.Matcher
-import org.hamcrest.TypeSafeMatcher
-import org.junit.Before
 import org.junit.runner.RunWith
-
-import androidx.test.core.app.ApplicationProvider.getApplicationContext
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withText
-import androidx.test.espresso.matcher.ViewMatchers
-import com.wipro.exercise.ui.adapter.HomePageAdapter
 
 
 @RunWith(AndroidJUnit4::class)
@@ -38,7 +11,6 @@ import com.wipro.exercise.ui.adapter.HomePageAdapter
 class HomePageSampleTest {
 
 
-    private val ITEM_BELOW_THE_FOLD = 40
 
     /**
      * Use [ActivityScenario] to create and launch the activity under test. This is a
@@ -79,7 +51,7 @@ class HomePageSampleTest {
     }
 
     *//**
-     * Matches the [CustomAdapter.ViewHolder]s in the middle of the list.
+     * Matches the s in the middle of the list.
      *//*
     private fun isInTheMiddle(): Matcher<HomePageAdapter.HomeViewHolder?>? {
         return object : TypeSafeMatcher<HomePageAdapter.HomeViewHolder?>() {

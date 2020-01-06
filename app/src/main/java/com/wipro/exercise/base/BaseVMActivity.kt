@@ -5,29 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.wipro.exercise.R
 
-abstract class BaseVMActivity <VM : BaseViewModel> : AppCompatActivity(), LifecycleObserver {
-    lateinit var mViewModel : VM
-
+abstract class BaseVMActivity : AppCompatActivity(), LifecycleObserver {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initVM()
-        startObserve()
         setContentView(getLayoutResId())
         initView()
         initData()
-    }
-
-    private fun initVM() {
-        providerVMClass()?.let {
-            mViewModel = ViewModelProvider(this).get(it)
-            mViewModel.let {
-                lifecycle::addObserver
-            }
-        }
     }
     protected fun setToolbarTitle(title: String) {
         val mToolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -35,21 +20,9 @@ abstract class BaseVMActivity <VM : BaseViewModel> : AppCompatActivity(), Lifecy
         mToolbar.setTitleTextColor(ContextCompat.getColor(this, android.R.color.white))
         setSupportActionBar(mToolbar)
     }
-    open fun providerVMClass() : Class<VM>? = null
-
-    open fun startObserve() {
-        mViewModel.mExceptions.observe(this, Observer { t -> onError(t) })
-    }
-
-    open fun onError(e: Throwable) {}
-
     abstract fun getLayoutResId(): Int
     abstract fun initView()
     abstract fun initData()
 
-    override fun onDestroy() {
-        lifecycle.removeObserver(mViewModel)
-        super.onDestroy()
-    }
 
 }

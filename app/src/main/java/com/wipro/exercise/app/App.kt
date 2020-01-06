@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import kotlin.properties.Delegates
 
-class ExerciseApp: Application() {
+class App: Application() {
     companion object {
         var CONTEXT: Context by Delegates.notNull()
     }

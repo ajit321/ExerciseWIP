@@ -1,6 +1,6 @@
 package com.wipro.exercise.model.api
 
-import com.wipro.exercise.app.ExerciseApp
+import com.wipro.exercise.app.App
 import com.wipro.exercise.utils.NetWorkUtils
 import okhttp3.CacheControl
 import okhttp3.Interceptor
@@ -10,13 +10,13 @@ class CacheInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
-        if (!NetWorkUtils.isNetworkAvailable(ExerciseApp.CONTEXT)) {
+        if (!NetWorkUtils.isNetworkAvailable(App.CONTEXT)) {
             request = request.newBuilder()
                 .cacheControl(CacheControl.FORCE_CACHE)
                 .build()
         }
         val response = chain.proceed(request)
-        if (!NetWorkUtils.isNetworkAvailable(ExerciseApp.CONTEXT)) {
+        if (!NetWorkUtils.isNetworkAvailable(App.CONTEXT)) {
             val maxAge = 60 * 60
             response.newBuilder()
                 .removeHeader("Pragma")

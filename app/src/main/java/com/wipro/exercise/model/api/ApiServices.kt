@@ -1,6 +1,5 @@
 package com.wipro.exercise.model.api
 
-import com.wipro.exercise.model.bean.AboutCanada
 import com.wipro.exercise.model.bean.ExerciseResponse
 import com.wipro.exercise.model.bean.Row
 import retrofit2.http.GET

@@ -4,9 +4,7 @@ import android.app.Activity
 import com.wipro.exercise.model.bean.ExerciseResponse
 import com.wipro.exercise.model.bean.Row
 import com.wipro.exercise.utils.toast
-
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.coroutineScope
 import retrofit2.HttpException
 
@@ -33,4 +31,3 @@ fun Activity.onNetError(e: Throwable, func: (e: Throwable) -> Unit) {
     }
 }
 
-fun ExerciseResponse<Any>.isSuccess(): Boolean = this.errorCode == 0

@@ -1,19 +1,14 @@
 <androidx.appcompat.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/toolbar"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:titleTextColor="@color/colorAccent"
-        app:theme="@style/AppTheme.PopupOverlay">
+        app:theme="@style/AppTheme.PopupOverlay"
+    tools:ignore="Overdraw">
 
-    <!--<ImageView
-        android:id="@+id/ivImageGold"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="@dimen/padding_50"
-        android:src="@drawable/app_title"
-        android:visibility="gone" />-->
+
 </androidx.appcompat.widget.Toolbar>
 

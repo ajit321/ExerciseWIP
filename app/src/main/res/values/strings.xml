@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">ExerciseWipro</string>
     <string name="todo">TODO</string>
-    <string name="middle">This is the middle!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -84,12 +84,16 @@ class HomePageAdapter(private val layoutInflater: LayoutInflater) :
 
     override fun getItemCount(): Int = mData.size
     override fun getItemViewType(position: Int): Int {
-        return if (mData[position].description == null) {
-            TYPE_DESCRIPTION
-        } else if (mData[position].imageHref == null) {
-            TYPE_IMAGE
-        } else {
-            TYPE_TITLE
+        return when {
+            mData[position].description == null -> {
+                TYPE_DESCRIPTION
+            }
+            mData[position].imageHref == null -> {
+                TYPE_IMAGE
+            }
+            else -> {
+                TYPE_TITLE
+            }
         }
     }
 
